@@ -1,5 +1,15 @@
 {
   "enabledPlugins": {
     "claude-code-setup@claude-plugins-official": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|Write|MultiEdit|Bash",
+        "hooks": [
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/protect-secrets.py\"" }
+        ]
+      }
+    ]
   }
 }

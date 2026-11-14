@@ -1,18 +1,30 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.key
+*.pem
 
-# Other files and folders
-.settings/
+# Dependencies and builds
+node_modules/
+dist/
+build/
+__pycache__/
+.venv/
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Video media and renders (too large for git)
+*.mp4
+*.mov
+*.mkv
+*.webm
+renders/
+tmp/
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local Claude Code settings
+.claude/settings.local.json
