@@ -1,0 +1,56 @@
+:root {
+  --mat: #2f5d50;
+  --mat-line: rgba(243, 245, 242, 0.09);
+  --mat-line-strong: rgba(243, 245, 242, 0.18);
+  --paper: #f3f5f2;
+  --ink: #10201b;
+  --ink-soft: #4a5c55;
+  --tape: #f2c230;
+  --danger: #b3261e;
+
+  --font: 'Archivo Variable', system-ui, sans-serif;
+  --step: 8px;
+
+  color-scheme: light;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--paper);
+  background: var(--mat);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--mat);
+  /* Self-healing cutting mat: fine 1 cm-ish grid, stronger line every 5 cells */
+  background-image:
+    linear-gradient(var(--mat-line-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mat-line-strong) 1px, transparent 1px),
+    linear-gradient(var(--mat-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mat-line) 1px, transparent 1px);
+  background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--tape);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
